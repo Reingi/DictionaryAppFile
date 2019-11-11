@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
-    private void readFromFile(){
+       private void readFromFile(){
         try{
             FileInputStream fos = openFileInput("words.txt"); //reading txt file
             InputStreamReader isr = new InputStreamReader(fos); // it reads bytes and decodes characters using a specified charset
