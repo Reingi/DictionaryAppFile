@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
-    private void readFromFile(){
+       private void readFromFile(){
         try{
-            FileInputStream fos = openFileInput("words.txt");
-            InputStreamReader isr = new InputStreamReader(fos);
-            BufferedReader br = new BufferedReader(isr);
-            String line = "";
+            FileInputStream fos = openFileInput("words.txt"); //reading txt file
+            InputStreamReader isr = new InputStreamReader(fos); // it reads bytes and decodes characters using a specified charset
+            BufferedReader br = new BufferedReader(isr);//used to read the text from a character-based input stream
+            String line;
             while((line=br.readLine())!=null){
                 String[] parts = line.split("->");
                 dictionary.put(parts[0],parts[1]);
