@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                String meaning = dictionary.get(key);
 
                Intent intent = new Intent(MainActivity.this, MeaningActivity.class);
-
+               intent.putExtra("word",key);
                intent.putExtra("meaning",meaning);
                startActivity(intent);
            }
