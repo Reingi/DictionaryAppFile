@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
        ArrayAdapter adapter = new ArrayAdapter<>(
                this,
                android.R.layout.simple_list_item_1,
-               new ArrayList<String>(dictionary.keySet())
+               new ArrayList<>(dictionary.keySet())
        );
 
        lstDictionary.setAdapter(adapter);
@@ -54,18 +54,18 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
-       private void readFromFile(){
-        try{
-            FileInputStream fos = openFileInput("words.txt"); //reading txt file
-            InputStreamReader isr = new InputStreamReader(fos); // it reads bytes and decodes characters using a specified charset
-            BufferedReader br = new BufferedReader(isr);//used to read the text from a character-based input stream
-            String line;
+   private void readFromFile(){
+    try{
+        FileInputStream fos = openFileInput("words.txt"); //reading txt file
+        InputStreamReader isr = new InputStreamReader(fos); // it reads bytes and decodes characters using a specified charset
+        BufferedReader br = new BufferedReader(isr);//used to read the text from a character-based input stream
+        String line;
             while((line=br.readLine())!=null){
                 String[] parts = line.split("->");
                 dictionary.put(parts[0],parts[1]);
             }
-        }  catch (IOException e) {
-            e.printStackTrace();
-        }
+        }catch (IOException e) {
+        e.printStackTrace();
+    }
     }
 }
